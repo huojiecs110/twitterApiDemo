@@ -1,0 +1,22 @@
+{
+  "name": "utools_twitter_tools_api",
+  "version": "1.1",
+  "description": "X__Twitter_API_for_search_Tweets_users_followers_images_media_and_more__Supports_some_v1_1_and_v2_API_endpoints_with_more_to_come_in_the_future",
+  "license": "If you want any API endpoints, you can also leave a message ",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "mocha --recursive"
+  },
+  "browser": {
+    "fs": false
+  },
+  "dependencies": {
+    "superagent": "3.7.0",
+    "querystring": "0.2.0"
+  },
+  "devDependencies": {
+    "mocha": "~2.3.4",
+    "sinon": "1.17.3",
+    "expect.js": "~0.3.1"
+  }
+}

@@ -1,0 +1,4430 @@
+---
+swagger: "2.0"
+info:
+  description: "X (Twitter) API for search, Tweets, users, followers, images, media\
+    \ and more. Supports some v1.1 and v2 API endpoints, with more to come in the\
+    \ future!"
+  version: "1.1"
+  title: "Utools_twitter_tools_api"
+  contact:
+    name: "Utools Telegram: yang0619"
+    url: "https://discord.gg/3JSAja7Rbr"
+    email: "huojiecs@gmail.com"
+  license:
+    name: "If you want any API endpoints, you can also leave a message "
+    url: "https://discord.gg/3JSAja7Rbr"
+host: "twitter.utools.me"
+basePath: "/api"
+tags:
+- name: "Twitter_DMS_api_tools"
+  description: "Api DMS Controller"
+- name: "Twitter_Follows_api_tools"
+  description: "Api Follows Controller"
+- name: "Twitter_Get_Twees_api_tools"
+  description: "Api Get Tweets Tools Controller"
+- name: "Twitter_LoginGetToken_api_tools"
+  description: "Api Login Get Token Controller"
+- name: "Twitter_Search_api_tools"
+  description: "Api Search Tools Controller"
+- name: "Twitter_Send_Twees_api_tools"
+  description: "Api Send Tweets Tools Controller"
+- name: "Twitter_Users_api_tools"
+  description: "Api Users Tools Controller"
+paths:
+  /base/apitools/blocksCreate:
+    get:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "blocks Create"
+      description: "See details  https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/mute-block-report-users/api-reference/post-blocks-create"
+      operationId: "blocksCreateUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "blocks Create"
+      description: "See details  https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/mute-block-report-users/api-reference/post-blocks-create"
+      operationId: "blocksCreateUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/blocksDestroy:
+    get:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "blocks Destroy"
+      description: "https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/mute-block-report-users/api-reference/post-blocks-destroy"
+      operationId: "blocksDestroyUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "44196397"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "blocks Destroy"
+      description: "https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/mute-block-report-users/api-reference/post-blocks-destroy"
+      operationId: "blocksDestroyUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "44196397"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/blueVerifiedFollowersV2:
+    get:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "get blueVerifiedFollowers by V2 "
+      operationId: "blueVerifiedFollowersV2UsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "get blueVerifiedFollowers by V2 "
+      operationId: "blueVerifiedFollowersV2UsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/createRetweet:
+    get:
+      tags:
+      - "Twitter_Send_Twees_api_tools"
+      summary: "retweet a Tweet"
+      operationId: "createRetweetUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "tweetId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722885211313307819"
+        x-exportParamName: "TweetId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Send_Twees_api_tools"
+      summary: "retweet a Tweet"
+      operationId: "createRetweetUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "tweetId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722885211313307819"
+        x-exportParamName: "TweetId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/createTweet:
+    get:
+      tags:
+      - "Twitter_Send_Twees_api_tools"
+      summary: "create a Tweet"
+      operationId: "createTweetUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "medias"
+        in: "query"
+        description: "medias ids"
+        required: false
+        type: "array"
+        items:
+          type: "string"
+        collectionFormat: "multi"
+        x-exportParamName: "Medias"
+      - name: "text"
+        in: "query"
+        required: true
+        type: "string"
+        default: "this tweet by utools auto send by https://twitter.utools.me"
+        x-exportParamName: "Text"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Send_Twees_api_tools"
+      summary: "create a Tweet"
+      operationId: "createTweetUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "medias"
+        in: "query"
+        description: "medias ids"
+        required: false
+        type: "array"
+        items:
+          type: "string"
+        collectionFormat: "multi"
+        x-exportParamName: "Medias"
+      - name: "text"
+        in: "query"
+        required: true
+        type: "string"
+        default: "this tweet by utools auto send by https://twitter.utools.me"
+        x-exportParamName: "Text"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/favoritersV2:
+    get:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "Favoriters by V2"
+      operationId: "favoritersV2UsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "tweetId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "TweetId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "Favoriters by V2"
+      operationId: "favoritersV2UsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "tweetId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "TweetId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/favoritesList:
+    get:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "favorites are now known as likes."
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/tweets/post-and-engage/api-reference/get-favorites-list"
+      operationId: "favoritesListUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "maxId"
+        in: "query"
+        description: "Returns results with an ID less than (that is, older than) or\
+          \ equal to the specified ID."
+        required: false
+        type: "string"
+        x-exportParamName: "MaxId"
+        x-optionalDataType: "String"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "sinceId"
+        in: "query"
+        description: "Returns results with an ID greater than (that is, more recent\
+          \ than) the specified ID. There are limits to the number of Tweets which\
+          \ can be accessed through the API. If the limit of Tweets has occured since\
+          \ the since_id, the since_id will be forced to the oldest ID available."
+        required: false
+        type: "string"
+        x-exportParamName: "SinceId"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "favorites are now known as likes."
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/tweets/post-and-engage/api-reference/get-favorites-list"
+      operationId: "favoritesListUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "maxId"
+        in: "query"
+        description: "Returns results with an ID less than (that is, older than) or\
+          \ equal to the specified ID."
+        required: false
+        type: "string"
+        x-exportParamName: "MaxId"
+        x-optionalDataType: "String"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "sinceId"
+        in: "query"
+        description: "Returns results with an ID greater than (that is, more recent\
+          \ than) the specified ID. There are limits to the number of Tweets which\
+          \ can be accessed through the API. If the limit of Tweets has occured since\
+          \ the since_id, the since_id will be forced to the oldest ID available."
+        required: false
+        type: "string"
+        x-exportParamName: "SinceId"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/follow:
+    get:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "to follow "
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/post-friendships-create"
+      operationId: "followUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "to follow "
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/post-friendships-create"
+      operationId: "followUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/followersIds:
+    get:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "Get Followers Ids"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/get-followers-ids"
+      operationId: "followersIdsUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "Get Followers Ids"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/get-followers-ids"
+      operationId: "followersIdsUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/followersList:
+    get:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "Get Followers User Collection"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/get-followers-list"
+      operationId: "followersListUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "Get Followers User Collection"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/get-followers-list"
+      operationId: "followersListUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/followersListV2:
+    get:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "get followersList by V2 "
+      operationId: "followersListV2UsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "get followersList by V2 "
+      operationId: "followersListV2UsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/followingsIds:
+    get:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "Get Followings Ids"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/get-friends-ids"
+      operationId: "followingsIdsUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "Get Followings Ids"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/get-friends-ids"
+      operationId: "followingsIdsUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/followingsList:
+    get:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "Get Followings User Collection"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/get-friends-list"
+      operationId: "followingsListUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "Get Followings User Collection"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/get-friends-list"
+      operationId: "followingsListUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/followingsListV2:
+    get:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "get followingsList by V2 "
+      operationId: "followingsListV2UsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "get followingsList by V2 "
+      operationId: "followingsListV2UsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/friendshipsShow:
+    get:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "Get relationship information between two users"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/get-friendships-show"
+      operationId: "getFriendshipsShowUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "source_id"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "SourceId"
+        x-optionalDataType: "String"
+      - name: "source_screen_name"
+        in: "query"
+        required: false
+        type: "string"
+        x-exportParamName: "SourceScreenName"
+        x-optionalDataType: "String"
+      - name: "target_id"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1620357967962058752"
+        x-exportParamName: "TargetId"
+        x-optionalDataType: "String"
+      - name: "target_screen_name"
+        in: "query"
+        required: false
+        type: "string"
+        x-exportParamName: "TargetScreenName"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "Get relationship information between two users"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/get-friendships-show"
+      operationId: "getFriendshipsShowUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "source_id"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "SourceId"
+        x-optionalDataType: "String"
+      - name: "source_screen_name"
+        in: "query"
+        required: false
+        type: "string"
+        x-exportParamName: "SourceScreenName"
+        x-optionalDataType: "String"
+      - name: "target_id"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1620357967962058752"
+        x-exportParamName: "TargetId"
+        x-optionalDataType: "String"
+      - name: "target_screen_name"
+        in: "query"
+        required: false
+        type: "string"
+        x-exportParamName: "TargetScreenName"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/getDMS:
+    get:
+      tags:
+      - "Twitter_DMS_api_tools"
+      summary: "receiving events"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/direct-messages/sending-and-receiving/api-reference/get-event<br>\
+        \  how to get <b>auth_token and ct0</b>? <br> https://twitter.com/chen22218/status/1722138510680043555 "
+      operationId: "getDMSUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "id"
+        in: "query"
+        required: true
+        type: "string"
+        x-exportParamName: "Id"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_DMS_api_tools"
+      summary: "receiving events"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/direct-messages/sending-and-receiving/api-reference/get-event<br>\
+        \  how to get <b>auth_token and ct0</b>? <br> https://twitter.com/chen22218/status/1722138510680043555 "
+      operationId: "getDMSUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "id"
+        in: "query"
+        required: true
+        type: "string"
+        x-exportParamName: "Id"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/getDMSListV2:
+    get:
+      tags:
+      - "Twitter_DMS_api_tools"
+      summary: "get DMS List"
+      operationId: "getDMSListV2UsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "cursor"
+        in: "query"
+        required: true
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_DMS_api_tools"
+      summary: "get DMS List"
+      operationId: "getDMSListV2UsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "cursor"
+        in: "query"
+        required: true
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/likeTweet:
+    get:
+      tags:
+      - "Twitter_Send_Twees_api_tools"
+      summary: "like(favorites) Tweet"
+      description: "see details https://developer.twitter.com/en/docs/twitter-api/v1/tweets/post-and-engage/api-reference/post-favorites-create"
+      operationId: "likeTweetUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "id"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "Id"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Send_Twees_api_tools"
+      summary: "like(favorites) Tweet"
+      description: "see details https://developer.twitter.com/en/docs/twitter-api/v1/tweets/post-and-engage/api-reference/post-favorites-create"
+      operationId: "likeTweetUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "id"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "Id"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/listByUserIdOrScreenName:
+    get:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get List by user_id or screen_name(get-lists-list)"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/create-manage-lists/api-reference/get-lists-list"
+      operationId: "getListByUserIdOrScreenNameUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get List by user_id or screen_name(get-lists-list)"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/create-manage-lists/api-reference/get-lists-list"
+      operationId: "getListByUserIdOrScreenNameUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/listMembersByListId:
+    get:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get List Members By ListId (get-lists-members)"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/create-manage-lists/api-reference/get-lists-members"
+      operationId: "getListMembersByListIdUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "listId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1453837432479227913"
+        x-exportParamName: "ListId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get List Members By ListId (get-lists-members)"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/create-manage-lists/api-reference/get-lists-members"
+      operationId: "getListMembersByListIdUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "listId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1453837432479227913"
+        x-exportParamName: "ListId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/login:
+    get:
+      tags:
+      - "Twitter_LoginGetToken_api_tools"
+      summary: "login by userName and passwrd"
+      operationId: "loginUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "email"
+        in: "query"
+        required: true
+        type: "string"
+        default: "elonmusk@gmail.com"
+        x-exportParamName: "Email"
+      - name: "password"
+        in: "query"
+        required: true
+        type: "string"
+        default: "tesla"
+        x-exportParamName: "Password"
+      - name: "screenName"
+        in: "query"
+        required: true
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_LoginGetToken_api_tools"
+      summary: "login by userName and passwrd"
+      operationId: "loginUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "email"
+        in: "query"
+        required: true
+        type: "string"
+        default: "elonmusk@gmail.com"
+        x-exportParamName: "Email"
+      - name: "password"
+        in: "query"
+        required: true
+        type: "string"
+        default: "tesla"
+        x-exportParamName: "Password"
+      - name: "screenName"
+        in: "query"
+        required: true
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/login2FA:
+    get:
+      tags:
+      - "Twitter_LoginGetToken_api_tools"
+      summary: "login by code"
+      operationId: "login2FAUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "code"
+        in: "query"
+        required: true
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "Code"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_LoginGetToken_api_tools"
+      summary: "login by code"
+      operationId: "login2FAUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "code"
+        in: "query"
+        required: true
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "Code"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/mentionsTimeline:
+    get:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "get mentionsTimeline Detail"
+      description: "See details  https://developer.twitter.com/en/docs/twitter-api/v1/tweets/timelines/api-reference/get-statuses-mentions_timeline"
+      operationId: "mentionsTimelineUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "include_entities"
+        in: "query"
+        required: false
+        type: "string"
+        default: "false"
+        x-exportParamName: "IncludeEntities"
+        x-optionalDataType: "String"
+      - name: "maxId"
+        in: "query"
+        description: "Returns results with an ID less than (that is, older than) or\
+          \ equal to the specified ID."
+        required: false
+        type: "string"
+        x-exportParamName: "MaxId"
+        x-optionalDataType: "String"
+      - name: "sinceId"
+        in: "query"
+        description: "Returns results with an ID greater than (that is, more recent\
+          \ than) the specified ID. There are limits to the number of Tweets which\
+          \ can be accessed through the API. If the limit of Tweets has occured since\
+          \ the since_id, the since_id will be forced to the oldest ID available."
+        required: false
+        type: "string"
+        x-exportParamName: "SinceId"
+        x-optionalDataType: "String"
+      - name: "trim_user"
+        in: "query"
+        required: false
+        type: "string"
+        default: "true"
+        x-exportParamName: "TrimUser"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "get mentionsTimeline Detail"
+      description: "See details  https://developer.twitter.com/en/docs/twitter-api/v1/tweets/timelines/api-reference/get-statuses-mentions_timeline"
+      operationId: "mentionsTimelineUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "include_entities"
+        in: "query"
+        required: false
+        type: "string"
+        default: "false"
+        x-exportParamName: "IncludeEntities"
+        x-optionalDataType: "String"
+      - name: "maxId"
+        in: "query"
+        description: "Returns results with an ID less than (that is, older than) or\
+          \ equal to the specified ID."
+        required: false
+        type: "string"
+        x-exportParamName: "MaxId"
+        x-optionalDataType: "String"
+      - name: "sinceId"
+        in: "query"
+        description: "Returns results with an ID greater than (that is, more recent\
+          \ than) the specified ID. There are limits to the number of Tweets which\
+          \ can be accessed through the API. If the limit of Tweets has occured since\
+          \ the since_id, the since_id will be forced to the oldest ID available."
+        required: false
+        type: "string"
+        x-exportParamName: "SinceId"
+        x-optionalDataType: "String"
+      - name: "trim_user"
+        in: "query"
+        required: false
+        type: "string"
+        default: "true"
+        x-exportParamName: "TrimUser"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/quotesV2:
+    get:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "Quotes by V2"
+      operationId: "quotesV2UsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "tweetId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "TweetId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "Quotes by V2"
+      operationId: "quotesV2UsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "tweetId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "TweetId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/retweetersIds:
+    get:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "get retwweeters ids by tweetId"
+      description: "Returns a collection of up to 100 user IDs belonging to users\
+        \ who have retweeted the Tweet specified by the id parameter. See details\
+        \ https://developer.twitter.com/en/docs/twitter-api/v1/tweets/post-and-engage/api-reference/get-statuses-retweeters-ids"
+      operationId: "retweetersIdsUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "id"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "Id"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "get retwweeters ids by tweetId"
+      description: "Returns a collection of up to 100 user IDs belonging to users\
+        \ who have retweeted the Tweet specified by the id parameter. See details\
+        \ https://developer.twitter.com/en/docs/twitter-api/v1/tweets/post-and-engage/api-reference/get-statuses-retweeters-ids"
+      operationId: "retweetersIdsUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "id"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "Id"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/retweetersV2:
+    get:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "Retweeters by V2"
+      operationId: "retweetersV2UsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "tweetId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "TweetId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "Retweeters by V2"
+      operationId: "retweetersV2UsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "tweetId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "TweetId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/search:
+    get:
+      tags:
+      - "Twitter_Search_api_tools"
+      summary: "Advanced Search"
+      operationId: "searchUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "any"
+        in: "query"
+        description: "Any of these words (Example: cats dogs �� contains either ��\
+          cats�� or ��dogs�� (or both))"
+        required: false
+        type: "string"
+        x-exportParamName: "Any"
+        x-optionalDataType: "String"
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        description: "cursor (Example: AACCgACF91iNpzAJxAKAAMX3WI2nL-x4AgABAAAAA )"
+        required: false
+        type: "string"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "from"
+        in: "query"
+        description: "From these accounts (Example: @Twitter �� sent from @Twitter)"
+        required: false
+        type: "string"
+        x-exportParamName: "From"
+        x-optionalDataType: "String"
+      - name: "likes"
+        in: "query"
+        description: "Minimum likes (Example: 280 �� Tweets with at least 280 likes))"
+        required: false
+        type: "string"
+        x-exportParamName: "Likes"
+        x-optionalDataType: "String"
+      - name: "mentioning"
+        in: "query"
+        description: "Mentioning these accounts (Example: @SFBART @Caltrain �� mentions\
+          \ @SFBART or mentions @Caltrain)"
+        required: false
+        type: "string"
+        x-exportParamName: "Mentioning"
+        x-optionalDataType: "String"
+      - name: "none"
+        in: "query"
+        description: "None of these words (Example: cats dogs �� does not contain\
+          \ ��cats�� and does not contain ��dogs��)"
+        required: false
+        type: "string"
+        x-exportParamName: "None"
+        x-optionalDataType: "String"
+      - name: "phrase"
+        in: "query"
+        description: "This exact phrase (Example: happy hour �� contains the exact\
+          \ phrase ��happy hour��)"
+        required: false
+        type: "string"
+        x-exportParamName: "Phrase"
+        x-optionalDataType: "String"
+      - name: "replies"
+        in: "query"
+        description: "Minimum replies (Example: 280 �� Tweets with at least 280 replies)"
+        required: false
+        type: "string"
+        x-exportParamName: "Replies"
+        x-optionalDataType: "String"
+      - name: "retweets"
+        in: "query"
+        description: "Minimum retweets (Example: 280 �� Tweets with at least 280 likes)"
+        required: false
+        type: "string"
+        x-exportParamName: "Retweets"
+        x-optionalDataType: "String"
+      - name: "since"
+        in: "query"
+        description: "start time (Example: 2020-01-01 )"
+        required: false
+        type: "string"
+        x-exportParamName: "Since"
+        x-optionalDataType: "String"
+      - name: "tag"
+        in: "query"
+        description: "These hashtags (Example: #ThrowbackThursday �� contains the\
+          \ hashtag #ThrowbackThursday)"
+        required: false
+        type: "string"
+        x-exportParamName: "Tag"
+        x-optionalDataType: "String"
+      - name: "to"
+        in: "query"
+        description: "To these accounts (Example: @Twitter �� sent in reply to @Twitter)"
+        required: false
+        type: "string"
+        x-exportParamName: "To"
+        x-optionalDataType: "String"
+      - name: "until"
+        in: "query"
+        description: "end time (Example: 2021-02-02)"
+        required: false
+        type: "string"
+        x-exportParamName: "Until"
+        x-optionalDataType: "String"
+      - name: "words"
+        in: "query"
+        required: true
+        type: "string"
+        x-exportParamName: "Words"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Search_api_tools"
+      summary: "Advanced Search"
+      operationId: "searchUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "any"
+        in: "query"
+        description: "Any of these words (Example: cats dogs �� contains either ��\
+          cats�� or ��dogs�� (or both))"
+        required: false
+        type: "string"
+        x-exportParamName: "Any"
+        x-optionalDataType: "String"
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        description: "cursor (Example: AACCgACF91iNpzAJxAKAAMX3WI2nL-x4AgABAAAAA )"
+        required: false
+        type: "string"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "from"
+        in: "query"
+        description: "From these accounts (Example: @Twitter �� sent from @Twitter)"
+        required: false
+        type: "string"
+        x-exportParamName: "From"
+        x-optionalDataType: "String"
+      - name: "likes"
+        in: "query"
+        description: "Minimum likes (Example: 280 �� Tweets with at least 280 likes))"
+        required: false
+        type: "string"
+        x-exportParamName: "Likes"
+        x-optionalDataType: "String"
+      - name: "mentioning"
+        in: "query"
+        description: "Mentioning these accounts (Example: @SFBART @Caltrain �� mentions\
+          \ @SFBART or mentions @Caltrain)"
+        required: false
+        type: "string"
+        x-exportParamName: "Mentioning"
+        x-optionalDataType: "String"
+      - name: "none"
+        in: "query"
+        description: "None of these words (Example: cats dogs �� does not contain\
+          \ ��cats�� and does not contain ��dogs��)"
+        required: false
+        type: "string"
+        x-exportParamName: "None"
+        x-optionalDataType: "String"
+      - name: "phrase"
+        in: "query"
+        description: "This exact phrase (Example: happy hour �� contains the exact\
+          \ phrase ��happy hour��)"
+        required: false
+        type: "string"
+        x-exportParamName: "Phrase"
+        x-optionalDataType: "String"
+      - name: "replies"
+        in: "query"
+        description: "Minimum replies (Example: 280 �� Tweets with at least 280 replies)"
+        required: false
+        type: "string"
+        x-exportParamName: "Replies"
+        x-optionalDataType: "String"
+      - name: "retweets"
+        in: "query"
+        description: "Minimum retweets (Example: 280 �� Tweets with at least 280 likes)"
+        required: false
+        type: "string"
+        x-exportParamName: "Retweets"
+        x-optionalDataType: "String"
+      - name: "since"
+        in: "query"
+        description: "start time (Example: 2020-01-01 )"
+        required: false
+        type: "string"
+        x-exportParamName: "Since"
+        x-optionalDataType: "String"
+      - name: "tag"
+        in: "query"
+        description: "These hashtags (Example: #ThrowbackThursday �� contains the\
+          \ hashtag #ThrowbackThursday)"
+        required: false
+        type: "string"
+        x-exportParamName: "Tag"
+        x-optionalDataType: "String"
+      - name: "to"
+        in: "query"
+        description: "To these accounts (Example: @Twitter �� sent in reply to @Twitter)"
+        required: false
+        type: "string"
+        x-exportParamName: "To"
+        x-optionalDataType: "String"
+      - name: "until"
+        in: "query"
+        description: "end time (Example: 2021-02-02)"
+        required: false
+        type: "string"
+        x-exportParamName: "Until"
+        x-optionalDataType: "String"
+      - name: "words"
+        in: "query"
+        required: true
+        type: "string"
+        x-exportParamName: "Words"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/sendDMS:
+    get:
+      tags:
+      - "Twitter_DMS_api_tools"
+      summary: "sendDMS events."
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/direct-messages/sending-and-receiving/api-reference/new-event<br>\
+        \  how to get <b>auth_token and ct0</b>? <br> https://twitter.com/chen22218/status/1722138510680043555 "
+      operationId: "sendDMSUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "recipient_id"
+        in: "query"
+        required: true
+        type: "string"
+        x-exportParamName: "RecipientId"
+      - name: "text"
+        in: "query"
+        required: true
+        type: "string"
+        x-exportParamName: "Text"
+      - name: "type"
+        in: "query"
+        required: true
+        type: "string"
+        default: "message_create"
+        x-exportParamName: "Type_"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_DMS_api_tools"
+      summary: "sendDMS events."
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/direct-messages/sending-and-receiving/api-reference/new-event<br>\
+        \  how to get <b>auth_token and ct0</b>? <br> https://twitter.com/chen22218/status/1722138510680043555 "
+      operationId: "sendDMSUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "recipient_id"
+        in: "query"
+        required: true
+        type: "string"
+        x-exportParamName: "RecipientId"
+      - name: "text"
+        in: "query"
+        required: true
+        type: "string"
+        x-exportParamName: "Text"
+      - name: "type"
+        in: "query"
+        required: true
+        type: "string"
+        default: "message_create"
+        x-exportParamName: "Type_"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/sendDMSMedia:
+    get:
+      tags:
+      - "Twitter_DMS_api_tools"
+      summary: "sendDMSMedia events."
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/direct-messages/sending-and-receiving/api-reference/new-event<br>\
+        \  how to get <b>auth_token and ct0</b>? <br> https://twitter.com/chen22218/status/1722138510680043555 "
+      operationId: "sendDMSMediaUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "attachment_media_id"
+        in: "query"
+        required: true
+        type: "string"
+        x-exportParamName: "AttachmentMediaId"
+      - name: "attachment_type"
+        in: "query"
+        required: true
+        type: "string"
+        default: "media"
+        x-exportParamName: "AttachmentType"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "quick_reply_type"
+        in: "query"
+        description: "Returns results with an ID less than (that is, older than) or\
+          \ equal to the specified ID."
+        required: false
+        type: "string"
+        x-exportParamName: "QuickReplyType"
+        x-optionalDataType: "String"
+      - name: "recipient_id"
+        in: "query"
+        required: true
+        type: "string"
+        x-exportParamName: "RecipientId"
+      - name: "text"
+        in: "query"
+        required: true
+        type: "string"
+        default: "(This message is sent by the best api tools twitter.utools.me)"
+        x-exportParamName: "Text"
+      - name: "type"
+        in: "query"
+        required: true
+        type: "string"
+        default: "message_create"
+        x-exportParamName: "Type_"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_DMS_api_tools"
+      summary: "sendDMSMedia events."
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/direct-messages/sending-and-receiving/api-reference/new-event<br>\
+        \  how to get <b>auth_token and ct0</b>? <br> https://twitter.com/chen22218/status/1722138510680043555 "
+      operationId: "sendDMSMediaUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "attachment_media_id"
+        in: "query"
+        required: true
+        type: "string"
+        x-exportParamName: "AttachmentMediaId"
+      - name: "attachment_type"
+        in: "query"
+        required: true
+        type: "string"
+        default: "media"
+        x-exportParamName: "AttachmentType"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "quick_reply_type"
+        in: "query"
+        description: "Returns results with an ID less than (that is, older than) or\
+          \ equal to the specified ID."
+        required: false
+        type: "string"
+        x-exportParamName: "QuickReplyType"
+        x-optionalDataType: "String"
+      - name: "recipient_id"
+        in: "query"
+        required: true
+        type: "string"
+        x-exportParamName: "RecipientId"
+      - name: "text"
+        in: "query"
+        required: true
+        type: "string"
+        default: "(This message is sent by the best api tools twitter.utools.me)"
+        x-exportParamName: "Text"
+      - name: "type"
+        in: "query"
+        required: true
+        type: "string"
+        default: "message_create"
+        x-exportParamName: "Type_"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/trends:
+    get:
+      tags:
+      - "Twitter_Search_api_tools"
+      summary: "trends Search"
+      description: "see details https://developer.twitter.com/en/docs/twitter-api/v1/trends/trends-for-location/api-reference/get-trends-place"
+      operationId: "trendsUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "id"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1"
+        x-exportParamName: "Id"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Search_api_tools"
+      summary: "trends Search"
+      description: "see details https://developer.twitter.com/en/docs/twitter-api/v1/trends/trends-for-location/api-reference/get-trends-place"
+      operationId: "trendsUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "id"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1"
+        x-exportParamName: "Id"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/tweetReply:
+    get:
+      tags:
+      - "Twitter_Send_Twees_api_tools"
+      summary: "reply to tweet "
+      operationId: "tweetReplyUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "medias"
+        in: "query"
+        description: "medias ids"
+        required: false
+        type: "array"
+        items:
+          type: "string"
+        collectionFormat: "multi"
+        x-exportParamName: "Medias"
+      - name: "text"
+        in: "query"
+        required: true
+        type: "string"
+        default: "this tweet by utools auto send by https://twitter.utools.me"
+        x-exportParamName: "Text"
+      - name: "tweetId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722885211313307819"
+        x-exportParamName: "TweetId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Send_Twees_api_tools"
+      summary: "reply to tweet "
+      operationId: "tweetReplyUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "medias"
+        in: "query"
+        description: "medias ids"
+        required: false
+        type: "array"
+        items:
+          type: "string"
+        collectionFormat: "multi"
+        x-exportParamName: "Medias"
+      - name: "text"
+        in: "query"
+        required: true
+        type: "string"
+        default: "this tweet by utools auto send by https://twitter.utools.me"
+        x-exportParamName: "Text"
+      - name: "tweetId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722885211313307819"
+        x-exportParamName: "TweetId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/tweetSimple:
+    get:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "tweet Brief information"
+      description: "get tweet Brief information"
+      operationId: "tweetSimpleUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "id"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "Id"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "tweet Brief information"
+      description: "get tweet Brief information"
+      operationId: "tweetSimpleUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "id"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "Id"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/tweetTimeline:
+    get:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "get TweetTimeline Detail"
+      description: "get tweetDetail and reply"
+      operationId: "tweetTimelineUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "id"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "Id"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "get TweetTimeline Detail"
+      description: "get tweetDetail and reply"
+      operationId: "tweetTimelineUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "id"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "Id"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/uerByIdOrNameLookUp:
+    get:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get user information based on username or id (lookup)"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/get-users-lookup"
+      operationId: "getUserByIdOrNameLookUpUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get user information based on username or id (lookup)"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/get-users-lookup"
+      operationId: "getUserByIdOrNameLookUpUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/uerByIdOrNameShow:
+    get:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get user information based on username or id (show)"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/get-users-show"
+      operationId: "getUserByIdOrNameShowUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get user information based on username or id (show)"
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/get-users-show"
+      operationId: "getUserByIdOrNameShowUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        default: "elonmusk"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/uerByIdRestIdV2:
+    get:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get uerByIdRestId by V2"
+      operationId: "uerByIdRestIdV2UsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get uerByIdRestId by V2"
+      operationId: "uerByIdRestIdV2UsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/unfollow:
+    get:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "to unfollow "
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/post-friendships-destroy"
+      operationId: "unfollowUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "44196397"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Follows_api_tools"
+      summary: "to unfollow "
+      description: "See details https://developer.twitter.com/en/docs/twitter-api/v1/accounts-and-users/follow-search-get-users/api-reference/post-friendships-destroy"
+      operationId: "unfollowUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "screenName"
+        in: "query"
+        required: false
+        type: "string"
+        x-exportParamName: "ScreenName"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: false
+        type: "string"
+        default: "44196397"
+        x-exportParamName: "UserId"
+        x-optionalDataType: "String"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/unlikeTweet:
+    get:
+      tags:
+      - "Twitter_Send_Twees_api_tools"
+      summary: "unlike(unfavorites) Tweet"
+      description: "see details https://developer.twitter.com/en/docs/twitter-api/v1/tweets/post-and-engage/api-reference/post-favorites-destroy"
+      operationId: "unlikeTweetUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "id"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "Id"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Send_Twees_api_tools"
+      summary: "unlike(unfavorites) Tweet"
+      description: "see details https://developer.twitter.com/en/docs/twitter-api/v1/tweets/post-and-engage/api-reference/post-favorites-destroy"
+      operationId: "unlikeTweetUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "id"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1722138510680043555"
+        x-exportParamName: "Id"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/uploadMedia:
+    get:
+      tags:
+      - "Twitter_Send_Twees_api_tools"
+      summary: "upload media (gif)"
+      operationId: "uploadMediaUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "media_url"
+        in: "query"
+        required: true
+        type: "string"
+        default: "https://i0.wp.com/www.printmag.com/wp-content/uploads/2021/02/4cbe8d_f1ed2800a49649848102c68fc5a66e53mv2.gif?fit=476%2C280&ssl=1"
+        x-exportParamName: "MediaUrl"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Send_Twees_api_tools"
+      summary: "upload media (gif)"
+      operationId: "uploadMediaUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "media_url"
+        in: "query"
+        required: true
+        type: "string"
+        default: "https://i0.wp.com/www.printmag.com/wp-content/uploads/2021/02/4cbe8d_f1ed2800a49649848102c68fc5a66e53mv2.gif?fit=476%2C280&ssl=1"
+        x-exportParamName: "MediaUrl"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/uploadMediaDM:
+    get:
+      tags:
+      - "Twitter_DMS_api_tools"
+      summary: "upload media for DM "
+      operationId: "uploadMediaDMUsingGET"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "file"
+        in: "formData"
+        description: "file"
+        required: true
+        type: "file"
+        x-exportParamName: "File"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_DMS_api_tools"
+      summary: "upload media for DM "
+      operationId: "uploadMediaDMUsingPOST"
+      consumes:
+      - "multipart/form-data"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "auth_token"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "AuthToken"
+      - name: "ct0"
+        in: "query"
+        required: true
+        type: "string"
+        default: "get it 1:from login API, 2:https://twitter.com/chen22218/status/1722138510680043555"
+        x-exportParamName: "Ct0"
+      - name: "file"
+        in: "formData"
+        description: "file"
+        required: true
+        type: "file"
+        x-exportParamName: "File"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/userByScreenNameV2:
+    get:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get userByScreenName by V2"
+      operationId: "userByScreenNameV2UsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "screenName"
+        in: "query"
+        required: true
+        type: "string"
+        default: "pWP5s7zypwvCwJp"
+        x-exportParamName: "ScreenName"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get userByScreenName by V2"
+      operationId: "userByScreenNameV2UsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "screenName"
+        in: "query"
+        required: true
+        type: "string"
+        default: "pWP5s7zypwvCwJp"
+        x-exportParamName: "ScreenName"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/userTimeline:
+    get:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get UserTimeline  tweets info"
+      operationId: "userTimelineUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get UserTimeline  tweets info"
+      operationId: "userTimelineUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/userTweetReply:
+    get:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "get userTweetReply "
+      description: "get user Tweet Reply"
+      operationId: "userTweetReplyUsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Get_Twees_api_tools"
+      summary: "get userTweetReply "
+      description: "get user Tweet Reply"
+      operationId: "userTweetReplyUsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+  /base/apitools/userTweetsV2:
+    get:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get UserTweets by V2"
+      operationId: "userTweetsV2UsingGET"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+    post:
+      tags:
+      - "Twitter_Users_api_tools"
+      summary: "Get UserTweets by V2"
+      operationId: "userTweetsV2UsingPOST"
+      consumes:
+      - "application/json"
+      produces:
+      - "*/*"
+      parameters:
+      - name: "apiKey"
+        in: "query"
+        required: true
+        type: "string"
+        default: "your own apikey"
+        x-exportParamName: "ApiKey"
+      - name: "cursor"
+        in: "query"
+        required: false
+        type: "string"
+        default: "-1"
+        x-exportParamName: "Cursor"
+        x-optionalDataType: "String"
+      - name: "userId"
+        in: "query"
+        required: true
+        type: "string"
+        default: "1574242047661207552"
+        x-exportParamName: "UserId"
+      deprecated: false
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/ResultT"
+        "201":
+          description: "Created"
+        "401":
+          description: "Unauthorized"
+        "403":
+          description: "Forbidden"
+        "404":
+          description: "Not Found"
+definitions:
+  ResultT:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      data:
+        type: "object"
+        properties: {}
+      msg:
+        type: "string"
+    title: "ResultT"
